@@ -1,0 +1,89 @@
+.encabezado {
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+}
+
+.user i {
+    color: #17202A;
+    font-size: 1rem;
+}
+
+.user h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.opciones {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.opciones a {
+    padding: 1rem 1.1rem;
+    border-radius: 10px;
+    color: #F4F6F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in;
+}
+
+.opciones a i {
+    font-size: 1rem;
+}
+
+.opcion-ajustes {
+    background-color: #17202A;
+}
+
+.opcion-ajustes:hover {
+    color: #5DADE2;
+}
+
+.opcion-ajustes i{
+    transition: all 2s ease-in-out;
+}
+
+.opcion-ajustes:hover i{
+    transform: rotate(360deg);
+}
+
+.opcion-salir{
+    background-color: #f0f3f4;
+}
+.opcion-salir i{
+    color: #17202A;
+}
+
+.opcion-salir:hover{
+    background-color: #E50808;
+}
+.opcion-salir:hover i{
+    color: #f0f3f4;
+}
+
+.section{
+    padding: 1.7rem;
+}
+h2{
+    font-size: 2rem;
+}
+p{
+    color: rgb(169, 170, 170);
+    font-size: 1rem;
+    font-weight: 400;
+}

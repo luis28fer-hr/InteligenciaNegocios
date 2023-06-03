@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     font-family: 'Montserrat', sans-serif;
+     scroll-behavior: smooth;
+     list-style: none;
+
+}
+
+header{
+    position:fixed;
+    background-color: #f0f3f4;
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid rgba(208, 211, 212, 0.5);
+    z-index: 100;
+
+}
+body{
+    background-color: #FDFEFE;
+}
+hr {
+    border-color: rgba(208, 211, 212, 0.3);
+}
+
+.nav-header div{
+padding: 1.5rem 1.8rem;
+display: flex;
+align-items: center;
+justify-content: start;
+
+font-size: 1rem;
+font-weight: 700;
+color: #000;
+}
+
+.nav-header div i{
+    font-size: 1.6rem;
+    color: #2BE750;
+    margin-right: 0.7rem;
+}
+
+.nav-body{
+    margin-top: 2rem;
+}
+.nav-body ul{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.nav-body ul .nav-link{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(208, 211, 212, 0.4);
+    transition: all 0.3s ease;
+
+}
+
+.nav-body ul .nav-link:hover{
+    background-color: #17202A;
+    color: #F4F6F7;
+
+}
+
+.nav-body ul .nav-link:hover a{
+    color: #F4F6F7;
+    font-weight: 600;
+}
+.nav-body ul .nav-link:hover a i{
+    color: #F4F6F7;
+}
+
+.active-li-link{
+    background-color: #17202A;
+    color: #F4F6F7
+}
+.nav-body ul .nav-link .active-a-link{
+    color: #F4F6F7;
+}
+
+
+
+
+.nav-body ul .nav-link a{
+    padding: 0 1.5rem;
+    width: 100%;
+    color: rgb(169, 170, 170);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nav-body ul .nav-link a i{
+    color: #17202A;
+    font-size: 1rem;
+}
+
+
+main{
+    margin-left: 20%;
+
+}
