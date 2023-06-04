@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('login', [LoginController::class, 'login'])->name('login.session');
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dash');
 Route::get('balance-general', [balance_generalController::class, 'index'])->name('balGeneral');

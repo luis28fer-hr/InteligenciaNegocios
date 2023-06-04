@@ -4,6 +4,7 @@
 
 @section('plantilla')
 
+
     <div class="section">
         <h2>Dashboard</h2>
         <p>Panel principal</p>
