@@ -9,6 +9,8 @@
 
     <link href="{{ URL::asset('css/navegacion.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet" />
+    <link rel="icon" href="{{ asset('../img/ING.png') }}">
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
