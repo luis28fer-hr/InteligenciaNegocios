@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-*{
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     text-decoration: none;
-     font-family: 'Montserrat', sans-serif;
-     scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     position: relative;
     background-color: #143241;
     overflow: hidden;
 }
 
-.container{
+.container {
     width: 100%;
     height: 90vh;
     display: flex;
@@ -24,35 +24,38 @@ body{
     justify-content: center;
 }
 
-.container-login{
+.container-login {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 
-.login-header{
+.login-header {
     text-align: center;
     color: #fff;
 }
-.login-header h1{
+
+.login-header h1 {
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 2rem;
 }
-.login-header h1 span{
+
+.login-header h1 span {
     font-family: 'Tourney', cursive;
     color: #2BE750;
     font-size: 3.5rem;
     font-weight: 400;
 }
-.login-header p{
+
+.login-header p {
     font-weight: 400;
     font-size: 0.9rem;
     margin-bottom: 2.2rem;
 }
 
-.login-body{
+.login-body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +63,18 @@ body{
     gap: 1.2rem;
 }
 
-.login-body input{
+.login-body div {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.login-body div span{
+    color: #da1313;
+    font-size: 0.9rem;
+}
+
+.login-body input {
     width: 70%;
     border: none;
     font-size: 0.9rem;
@@ -72,13 +86,19 @@ body{
     transition: all 0.4s ease-in;
 }
 
-.login-body input:focus{
+.login-body .invalido {
+    border: 1px solid #da1313;
+}
+
+
+.login-body input:focus {
+    border: none;
     outline: none;
     transform: scale(1.05);
 }
 
-.login-footer{
-    margin-top: 2.5rem;
+.login-footer {
+    margin-top: 2.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +106,7 @@ body{
     z-index: 10;
 }
 
-.login-footer button{
+.login-footer button {
     width: 70%;
     border-radius: 12px;
     border: none;
@@ -99,7 +119,8 @@ body{
     letter-spacing: 0.5px;
     transition: all 0.3s ease-in;
 }
-.login-footer button:hover{
+
+.login-footer button:hover {
     background-color: #2be751d0;
     color: #ECF0F1;
     letter-spacing: 1px;
@@ -107,10 +128,9 @@ body{
 
 }
 
-svg{
+svg {
     bottom: 0;
     margin-bottom: -7rem;
     position: absolute;
     z-index: 0;
 }
-

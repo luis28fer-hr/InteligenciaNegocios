@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\loginValidar;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -11,6 +12,13 @@ class LoginController extends Controller
     {
 
         return view('login');
+    }
+
+    public function login(loginValidar $req){
+
+
+
+        return redirect('dashboard')->with('bienvenida','login');
     }
 
 }
