@@ -11,7 +11,4 @@ class cuentasTController extends Controller
 
         return view('cuentasT');
     }
-
-    
-
 }
