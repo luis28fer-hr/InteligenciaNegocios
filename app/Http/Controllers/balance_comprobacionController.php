@@ -11,4 +11,10 @@ class balance_comprobacionController extends Controller
 
         return view('balance-comprobacion');
     }
+
+    public function pdf_bcomp()
+    {
+
+        return view('pdf/balance-comp');
+    }
 }
