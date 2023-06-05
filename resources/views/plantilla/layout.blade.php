@@ -10,7 +10,7 @@
     <link href="{{ URL::asset('css/navegacion.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet" />
     <link rel="icon" href="{{ asset('../img/ING.png') }}">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -32,6 +32,7 @@
     </main>
 
     <script src="https://kit.fontawesome.com/67609a736e.js" crossorigin="anonymous"></script>
+    
 
 </body>
 
