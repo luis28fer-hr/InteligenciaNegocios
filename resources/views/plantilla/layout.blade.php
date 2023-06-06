@@ -21,10 +21,10 @@
 <body>
     @if (session()->has('bienvenida'))
         {!! "<script> Swal.fire({
-            icon: 'success',
-            title: '¡Bienvenido!',
-            text: '¡Inicio session exitosamente!',
-            })</script> " !!}
+                    icon: 'success',
+                    title: '¡Bienvenido!',
+                    text: '¡Inicio session exitosamente!',
+                    })</script> " !!}
     @endif
 
     @include('plantilla/navegacion')
