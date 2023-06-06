@@ -37,9 +37,9 @@
     width: 9.2rem;
     padding-left: 1.5rem;
     height: 2.35rem;
-    border-top: 2px solid  rgba(0, 244, 92, 1);
-    border-right: 2px solid  rgba(0, 244, 92, 1);
-    border-bottom: 2px solid  rgba(0, 244, 92, 1);
+    border-top: 2px solid rgba(0, 244, 92, 1);
+    border-right: 2px solid rgba(0, 244, 92, 1);
+    border-bottom: 2px solid rgba(0, 244, 92, 1);
     background-color: #ECF0F1;
     font-size: 0.7rem;
     font-weight: 600;
@@ -70,12 +70,12 @@
 
 }
 
-.card div input::placeholder{
+.card div input::placeholder {
     font-weight: 500;
 }
 
 
-.card div input{
+.card div input {
     padding: 0.3rem 0.5rem;
     width: 100%;
     border: 1px solid #17202A;
@@ -85,7 +85,8 @@
     text-transform: uppercase;
 
 }
-.card div .guardar-titulo{
+
+.card div .guardar-titulo {
     position: absolute;
     right: 0;
     border: 1px solid #17202A;
@@ -98,13 +99,13 @@
 }
 
 
-.card div .guardar-titulo:hover{
+.card div .guardar-titulo:hover {
     background-color: #2ECC71;
     border: 1px solid #2ECC71;
     color: #17202A;
 }
 
-.card div input:focus{
+.card div input:focus {
     outline: none;
 }
 
@@ -122,12 +123,13 @@
     border-bottom: 2px solid #17202A;
 }
 
-.card table .firts{
+.card table .firts {
     border-right: 2px solid #17202A;
     width: 50%;
 
 }
-.card table .second{
+
+.card table .second {
     border-left: 2px solid #17202A;
     width: 50%;
 }
@@ -137,14 +139,16 @@
     font-size: 0.9rem;
 
 }
-.lo-que-tengo{
+
+.lo-que-tengo {
     text-align: right;
 }
-.lo-que-no-tengo{
+
+.lo-que-no-tengo {
     text-align: left;
 }
 
-.resultado-resta{
+.resultado-resta {
     padding: 0.3rem 0.5rem;
     width: 100%;
     border: 1px solid #17202A;
@@ -156,7 +160,7 @@
     text-transform: uppercase;
 }
 
-.card .btns{
+.card .btns {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,7 +168,7 @@
     gap: 0.2rem;
 }
 
-.card .btns button{
+.card .btns button {
     width: 100%;
     padding: 0.4rem 1rem;
     font-size: 0.8rem;
@@ -176,13 +180,14 @@
     transition: all 0.3s ease;
 }
 
-.card .btns .agregar-fila:hover{
+.card .btns .agregar-fila:hover {
     background-color: #F1C40F;
     border: none;
     cursor: pointer;
     color: #000;
 }
-.card .btns .eliminar-card:hover{
+
+.card .btns .eliminar-card:hover {
     background-color: #E74C3C;
     border: none;
     cursor: pointer;
