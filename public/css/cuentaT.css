@@ -1,0 +1,190 @@
+#agregar-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    color: #F0F3F4;
+    border-radius: 32px;
+    background-color: #2ECC71;
+    transition: all 0.3s ease-in;
+    font-size: 0.5rem;
+}
+
+#agregar-card div {
+    position: absolute;
+    top: 1;
+    left: 0;
+    background-color: #07DC57;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17202A;
+    font-size: 1.1rem;
+}
+
+
+#agregar-card:hover {
+    transform: scale(1.1);
+    width: 9.2rem;
+    padding-left: 1.5rem;
+    height: 2.35rem;
+    border-top: 2px solid  rgba(0, 244, 92, 1);
+    border-right: 2px solid  rgba(0, 244, 92, 1);
+    border-bottom: 2px solid  rgba(0, 244, 92, 1);
+    background-color: #ECF0F1;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #17202A;
+}
+
+#card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.card {
+    border-radius: 3px;
+    padding: 0.8rem;
+    border: 2px solid rgba(208, 211, 212, 0.8);
+
+}
+
+.card div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+
+}
+
+.card div input::placeholder{
+    font-weight: 500;
+}
+
+
+.card div input{
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    border: 1px solid #17202A;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f0f3f4;
+    text-transform: uppercase;
+
+}
+.card div .guardar-titulo{
+    position: absolute;
+    right: 0;
+    border: 1px solid #17202A;
+    background-color: #17202A;
+    padding: 0.3rem 0.6rem;
+    color: #f0f3f4;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.card div .guardar-titulo:hover{
+    background-color: #2ECC71;
+    border: 1px solid #2ECC71;
+    color: #17202A;
+}
+
+.card div input:focus{
+    outline: none;
+}
+
+.card table {
+    width: 100%;
+    background-color: #f0f3f4;
+    border-collapse: collapse;
+
+}
+
+.card table th {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.3rem;
+    border-bottom: 2px solid #17202A;
+}
+
+.card table .firts{
+    border-right: 2px solid #17202A;
+    width: 50%;
+
+}
+.card table .second{
+    border-left: 2px solid #17202A;
+    width: 50%;
+}
+
+.card table td {
+    padding: 0.3rem 1.5rem;
+    font-size: 0.9rem;
+
+}
+.lo-que-tengo{
+    text-align: right;
+}
+.lo-que-no-tengo{
+    text-align: left;
+}
+
+.resultado-resta{
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    border: 1px solid #17202A;
+
+    font-weight: 700;
+    color: #17202A;
+    text-align: center;
+    background-color: #f0f3f4;
+    text-transform: uppercase;
+}
+
+.card .btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.card .btns button{
+    width: 100%;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    border: none;
+
+    background-color: #17202A;
+    color: #f0f3f4;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.card .btns .agregar-fila:hover{
+    background-color: #F1C40F;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
+.card .btns .eliminar-card:hover{
+    background-color: #E74C3C;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
