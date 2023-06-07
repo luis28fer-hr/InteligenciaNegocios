@@ -37,14 +37,14 @@
                                 <th class="second">Credito</th>
                             </tr>
                             <tr>
-                                <td contenteditable="true" class="lo-que-tengo firts">0</td>
+                                <td contenteditable="true" class="lo-que-tengo firts" id="cerito">0</td>
                                 <td contenteditable="true" class="lo-que-no-tengo second">0</td>
                             </tr>
                         </table>
 
                         <div>
                             <input type="text" value="0" disabled class="suma-lo-que-tengo">
-                            <input type="text" value="0" disabled class="suma-lo-que-no-tengo">
+                            <input type="text" value="0" disabled class="suma-lo-que-no-tengo" >
                         </div>
                         <input type="text" value="0" disabled class="resultado-resta">
                         <div class = "btns">
@@ -55,6 +55,21 @@
                 `;
                 $('#card-container').append(cardHtml);
                 cardIndex++;
+
+                // Cerito Coqueto
+                // Solo funciona para el Debito 1, se ocupan modificaciones para que funcione
+                // en todas las filas, pero es propuesta
+                $('#' + cardId + ' #cerito').on('click', function() {
+                if (this.innerText === "0") {
+                    this.innerText = "";
+                }
+                });
+                $('#' + cardId + ' #cerito').on('blur', function() {
+                if (this.innerText === "") {
+                    this.innerText = "0";
+                }
+                });
+
 
                 // Funcionalidad para guardar el título
                 $('#' + cardId + ' .guardar-titulo').on('click', function() {
@@ -99,8 +114,5 @@
         });
     </script>
 
-
-
-    </div>
 
 @endsection
