@@ -7,6 +7,7 @@
     <div class="section">
         <h2>Cuentas T</h2>
         <p>Representación visual que permite un seguimiento claro de los movimientos contables.</p>
+
         
         <br>
 
@@ -14,32 +15,18 @@
             <button id="agregar-card">Agregar CuentaT</button>
         </div>
 
+
+
+        <button id="agregar-card"><div><i class="fa-solid fa-plus"></i></div>Nueva cuenta</button>
+
+
         <div id="card-container">
             <!-- Aquí se agregarán los cards dinámicamente -->
         </div>
     </div>
 
-    <style>
-        .card {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        .card input {
-            margin-bottom: 10px;
-        }
-        .card table {
-            margin-bottom: 10px;
-        }
-        .card table th {
-            text-align: center;
-        }
-        .card table td {
-            padding: 5px;
-        }
-    </style>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function() {
             var cardIndex = 1;
@@ -49,27 +36,49 @@
                 var cardId = 'card-' + cardIndex;
                 var cardHtml = `
                     <div id="${cardId}" class="card">
-                        <input type="text" placeholder="Título">
-                        <button class="guardar-titulo">Guardar</button>
+                        <div>
+                            <input type="text" placeholder="Título de la cuenta">
+                            <button class="guardar-titulo"><i class="fa-solid fa-check"></i></button>
+                        </div>
                         <table>
                             <tr>
-                                <th>Lo que tengo</th>
-                                <th>Lo que no tengo</th>
+                                <th class="firts">Debito</th>
+                                <th class="second">Credito</th>
                             </tr>
                             <tr>
-                                <td contenteditable="true" class="lo-que-tengo">0</td>
-                                <td contenteditable="true" class="lo-que-no-tengo">0</td>
+                                <td contenteditable="true" class="lo-que-tengo firts" id="cerito">0</td>
+                                <td contenteditable="true" class="lo-que-no-tengo second">0</td>
                             </tr>
                         </table>
-                        <button class="agregar-fila">Agregar Fila</button>
-                        <input type="text" value="0" disabled class="suma-lo-que-tengo">
-                        <input type="text" value="0" disabled class="suma-lo-que-no-tengo">
+
+                        <div>
+                            <input type="text" value="0" disabled class="suma-lo-que-tengo">
+                            <input type="text" value="0" disabled class="suma-lo-que-no-tengo" >
+                        </div>
                         <input type="text" value="0" disabled class="resultado-resta">
-                        <button class="eliminar-card">Eliminar Card</button>
+                        <div class = "btns">
+                            <button class="agregar-fila">Agregar Fila</button>
+                            <button class="eliminar-card">Eliminar Card</button>
+                        </div>
                     </div>
                 `;
                 $('#card-container').append(cardHtml);
                 cardIndex++;
+
+                // Cerito Coqueto
+                // Solo funciona para el Debito 1, se ocupan modificaciones para que funcione
+                // en todas las filas, pero es propuesta
+                $('#' + cardId + ' #cerito').on('click', function() {
+                if (this.innerText === "0") {
+                    this.innerText = "";
+                }
+                });
+                $('#' + cardId + ' #cerito').on('blur', function() {
+                if (this.innerText === "") {
+                    this.innerText = "0";
+                }
+                });
+
 
                 // Funcionalidad para guardar el título
                 $('#' + cardId + ' .guardar-titulo').on('click', function() {
@@ -81,8 +90,8 @@
                 $('#' + cardId + ' .agregar-fila').on('click', function() {
                     var filaHtml = `
                         <tr>
-                            <td contenteditable="true" class="lo-que-tengo">0</td>
-                            <td contenteditable="true" class="lo-que-no-tengo">0</td>
+                            <td contenteditable="true" class="lo-que-tengo firts">0</td>
+                                <td contenteditable="true" class="lo-que-no-tengo second">0</td>
                         </tr>
                     `;
                     $('#' + cardId + ' table').append(filaHtml);
@@ -113,9 +122,6 @@
             });
         });
     </script>
-            
-       
 
-    </div>
 
 @endsection
