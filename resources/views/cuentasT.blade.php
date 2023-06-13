@@ -8,8 +8,15 @@
         <h2>Cuentas T</h2>
         <p>Representación visual que permite un seguimiento claro de los movimientos contables.</p>
 
+        
+        <br>
+
+        <div class="boton">
+            <button id="agregar-card">Agregar CuentaT</button>
+        </div>
 
         <button id="agregar-card"><div><i class="fa-solid fa-plus"></i></div>Nueva cuenta</button>
+
 
         <div id="card-container">
             <!-- Aquí se agregarán los cards dinámicamente -->
