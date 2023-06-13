@@ -11,4 +11,24 @@
 
     </div>
 
+    <div class="container">
+
+        {{-- FORM DE REGISTRO DATOS/MOVIMIENTOS --}}
+        <form action="" method="post">
+
+            <input type="text">
+
+            <select class="form-select form-select-lg" name="" id="">
+                <option selected>Select one</option>
+                <option value="">New Delhi</option>
+                <option value="">Istanbul</option>
+                <option value="">Jakarta</option>
+            </select>
+          
+            <button type="submit">Guardar</button>
+
+        </form>
+
+    </div>
+
 @endsection
