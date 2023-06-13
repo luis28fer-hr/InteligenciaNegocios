@@ -7,10 +7,12 @@
     <div class="section">
         <h2>Cuentas T</h2>
         <p>Representación visual que permite un seguimiento claro de los movimientos contables.</p>
+        
+        <br>
 
-        
-        
-        <button id="agregar-card">Agregar Card</button>
+        <div class="boton">
+            <button id="agregar-card">Agregar CuentaT</button>
+        </div>
 
         <div id="card-container">
             <!-- Aquí se agregarán los cards dinámicamente -->
