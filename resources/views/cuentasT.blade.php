@@ -160,7 +160,10 @@
     display: inline-block;
     font-size: 12px;
     cursor: pointer;
-  }
+  },
+  .colored-cell {
+  background-color: yellow; /* Cambia el color aquí según tus preferencias */
+}
 </style>
 
 <div class="section">
@@ -247,4 +250,113 @@
         }
       </script>
 </div>
+
+<div class="section">
+  <h2>Nomina de usuario</h2>
+          <p>En este apartado indicamos los valores que se encuentran en las cuentasT</p>
+  </div>
+
+<div>
+  <table>
+    <tr>
+      <th>Impuesto</th>
+      <th>Mensual</th>
+    </tr>
+    <tr>
+      <td>Base</td>
+      <td contenteditable="true" id="base"></td>
+    </tr>
+    <tr>
+      <td>Limite inferior</td>
+      <td contenteditable="true" id="limite-inferior"></td>
+    </tr>
+    <tr>
+      <td>Excedente sobre el límite inferior</td>
+      <td id="excedente"></td>
+    </tr>
+    <tr>
+      <td>Tasa de impuestos</td>
+      <td contenteditable="true" id="tasa"></td>
+    </tr>
+    <tr>
+      <td>Impuesto previo</td>
+      <td id="impuesto-previo"></td>
+    </tr>
+    <tr>
+      <td>Cuota fija</td>
+      <td contenteditable="true" id="cuota-fija"></td>
+    </tr>
+    <tr>
+      <td>Impuesto</td>
+      <td id="impuesto"></td>
+    </tr>
+    <tr>
+      <td>Subsidio para el empleo</td>
+      <td contenteditable="true" id="subsidio"></td>
+    </tr>
+    <tr>
+      <td>Cantidad a retener</td>
+      <td id="cantidad-retener"></td>
+    </tr>
+    <tr>
+      <td>Subsidio para el empleo a pagar en efectivo</td>
+      <td id="subsidio-efectivo"></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">Ingreso Neto</td>
+      <td id="ingreso-neto"></td>
+    </tr>
+  </table>
+
+  <script>
+    const baseInput = document.getElementById('base');
+    const limiteInput = document.getElementById('limite-inferior');
+    const excedenteCell = document.getElementById('excedente');
+    const tasaInput = document.getElementById('tasa');
+    const impuestoPrevioCell = document.getElementById('impuesto-previo');
+    const cuotaFijaInput = document.getElementById('cuota-fija');
+    const impuestoCell = document.getElementById('impuesto');
+    const subsidioInput = document.getElementById('subsidio');
+    const cantiRetener = document.getElementById('cantidad-retener');
+    const subsidioEfectivoCell = document.getElementById('subsidio-efectivo');
+    const ingresoNetoCell = document.getElementById('ingreso-neto');
+
+    function calculate() {
+      const base = parseFloat(baseInput.innerText) || 0;
+      const limite = parseFloat(limiteInput.innerText) || 0;
+      const tasa = parseFloat(tasaInput.innerText) || 0;
+      const cuotaFija = parseFloat(cuotaFijaInput.innerText) || 0;
+      const subsidio = parseFloat(subsidioInput.innerText) || 0;
+
+      const excedente = Math.max(base - limite, 0);
+      excedenteCell.innerText = excedente.toFixed(2);
+
+      const impuestoPrevio = excedente * (tasa / 100);
+      impuestoPrevioCell.innerText = impuestoPrevio.toFixed(2);
+
+      const impuesto = impuestoPrevio + cuotaFija;
+      impuestoCell.innerText = impuesto.toFixed(2);
+
+      const cantidadRetener = Math.max(impuesto - subsidio, 0);
+      cantiRetener.innerText = cantidadRetener.toFixed(2);
+
+      const subsidioEfectivo = Math.abs(impuesto - subsidio, 0);
+      subsidioEfectivoCell.innerText = subsidioEfectivo.toFixed(2);
+
+      const ingresoNeto = base + subsidioEfectivo;
+      ingresoNetoCell.innerText = ingresoNeto.toFixed(2);
+    }
+
+    baseInput.addEventListener('input', calculate);
+    limiteInput.addEventListener('input', calculate);
+    tasaInput.addEventListener('input', calculate);
+    cuotaFijaInput.addEventListener('input', calculate);
+    subsidioInput.addEventListener('input', calculate);
+
+    calculate();
+  </script>
+</div>
+
+
+
 @endsection
