@@ -14,7 +14,7 @@
     <div class="container">
 
         {{-- FORM DE REGISTRO DATOS/MOVIMIENTOS --}}
-        <form action="" method="post">
+        <form action="#">
 
             <input type="text">
 
@@ -24,7 +24,7 @@
                 <option value="">Istanbul</option>
                 <option value="">Jakarta</option>
             </select>
-          
+
             <button type="submit">Guardar</button>
 
         </form>

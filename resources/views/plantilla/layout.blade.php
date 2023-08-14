@@ -10,6 +10,7 @@
     <link href="{{ URL::asset('css/navegacion.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('css/cuentaT.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('css/balance.css') }}" rel="stylesheet" />
 
     <link rel="icon" href="{{ asset('../img/ING.png') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

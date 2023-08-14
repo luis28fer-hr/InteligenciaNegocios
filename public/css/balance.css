@@ -1,0 +1,107 @@
+table {
+    margin-top: 1.5rem;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+table .tema{
+    background-color: #ECF0F1;
+}
+table .tema th{
+    padding: .7rem;
+    color: black;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid black;
+
+}
+table .titulos th {
+    background-color: #F0F3F4;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.05rem;
+    border-bottom: 1px solid black;
+
+}
+table .titulos td{
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
+
+}
+.tdclass{
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
+}
+table .encabezados{
+    background-color: #F4F6F7;
+    font-size: 1rem;
+    font-weight: 600;
+}
+table .encabezados td{
+    padding: 0.4rem;
+    text-align: center;
+    border-bottom: 2px solid black;
+
+}
+
+table .regitros {
+    background-color: #F8F9F9;
+    font-size: 1rem;
+    font-weight: 600;
+}
+table .regitros td:first-child{
+    text-align: left;
+}
+
+table .regitros td{
+    padding: 0.5rem;
+    text-align: right;
+}
+table .regitros td::before{
+    content: '$ ';
+}
+table .regitros td:nth-child(1)::before{
+    content: none;
+}
+
+table .final {
+    background-color: #ECF0F1;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+table .final td:nth-child(1){
+    text-align: left;
+}
+table .final td{
+    border-top: 2px solid black;
+    font-weight: 700;
+    padding: 0.6rem;
+    text-align: right;
+}
+
+table .final td:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+table .final td::before{
+    content: '$ ';
+}
+
+
+table .final td:nth-child(1)::before{
+    content: none;
+}
+
+
+h3{
+    width: 100%;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    padding: .5rem;
+    border-bottom: 2px solid #07DC57;
+}
+
