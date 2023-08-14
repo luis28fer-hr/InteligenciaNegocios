@@ -163,6 +163,11 @@
   }
 </style>
 
+<div class="section">
+<h2>Balanza de comprobacion</h2>
+        <p>En este apartado indicamos los valores que se encuentran en las cuentasT</p>
+</div>
+
 <div>
     <button id="add-row-btn">Agregar fila</button>
     <table id="movimientos-table">
