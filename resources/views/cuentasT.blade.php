@@ -16,7 +16,24 @@
         </div>
 
         <button id="agregar-card"><div><i class="fa-solid fa-plus"></i></div>Nueva cuenta</button>
-
+        <button id="balanceG"><div><i class=""></i></div>Generar</button>
+        
+        {{-- BALANCE GENERAL --}}
+        <table id="tabla-generada">
+            <thead>
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Tipo A/P</th>
+                    <th>Tipo C/F</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas generadas -->
+            </tbody>
+        </table>
+        
 
         <div id="card-container">
             <!-- Aquí se agregarán los cards dinámicamente -->
@@ -35,8 +52,23 @@
                 var cardHtml = `
                     <div id="${cardId}" class="card">
                         <div>
+                            <label>ID: ${cardId}</label>
                             <input type="text" placeholder="Título de la cuenta">
                             <button class="guardar-titulo"><i class="fa-solid fa-check"></i></button>
+                            
+                        </div>
+
+                        <div>
+                            <select class="form-select form-select-lg" name="select1" id="">
+                             <option selected>Select one</option>
+                            <option value="Activo">Activo</option>
+                            <option value="Pasivo">Pasivo</option>
+                             </select>
+                             <select class="form-select form-select-lg" name="select2" id="">
+                             <option selected>Select one</option>
+                            <option value="Activo">Circulante</option>
+                            <option value="Fijo">Fijo</option>
+                             </select>
                         </div>
                         <table>
                             <tr>
@@ -60,6 +92,7 @@
                         </div>
                     </div>
                 `;
+
                 $('#card-container').append(cardHtml);
                 cardIndex++;
 
@@ -118,6 +151,60 @@
                     $('#' + cardId).remove();
                 });
             });
+
+            // // Funcionalidad para el botón "Generar"
+            // $('#balanceG').on('click', function() {
+            //         // Recorremos cada card para obtener sus datos
+            //         $('#card-container .card').each(function() {
+            //             var cardId = $(this).attr('id');
+            //             var titulo = $(this).find('input[type="text"]').val();
+            //             var tipoAP = $(this).find('select[name="select1"]').val();
+            //             var tipoCF = $(this).find('select[name="select2"]').val();
+            //             var resultResta = $(this).find('.resultado-resta').val();
+
+            //             // Agregamos los datos a una nueva fila en la tabla generada
+            //             var filaHtml = `<tr>
+            //                 <td>${cardId}</td>
+            //                 <td>${titulo}</td>
+            //                 <td>${tipoAP}</td>
+            //                 <td>${tipoCF}</td>
+            //                 <td>${resultResta}</td>
+            //             </tr>`;
+            //             $('#tabla-generada tbody').append(filaHtml);
+            //         });
+            //     });
+
+            function generarTabla() {
+            var tablaHtml = '';
+            
+            // Recorremos cada card para obtener sus datos
+            $('#card-container .card').each(function() {
+                var cardId = $(this).attr('id');
+                var titulo = $(this).find('input[type="text"]').val();
+                var tipoAP = $(this).find('select[name="select1"]').val();
+                var tipoCF = $(this).find('select[name="select2"]').val();
+                var resultResta = $(this).find('.resultado-resta').val();
+
+                // Agregamos los datos a una nueva fila en la tabla generada
+                tablaHtml += `
+                    <tr>
+                        <td>${cardId}</td>
+                        <td>${titulo}</td>
+                        <td>${tipoAP}</td>
+                        <td>${tipoCF}</td>
+                        <td>${resultResta}</td>
+                    </tr>
+                `;
+            });
+
+            $('#tabla-generada tbody').html(tablaHtml);
+        }
+
+         // Funcionalidad para el botón "Generar"
+         $('#balanceG').on('click', function() {
+            generarTabla(); // Generar o reemplazar la tabla con los datos actualizados
+        });
+
         });
     </script>
 
