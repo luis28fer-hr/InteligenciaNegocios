@@ -1,3 +1,6 @@
+.section{
+    margin-bottom: 0rem;
+}
 #agregar-card {
     position: relative;
     display: flex;
@@ -192,4 +195,108 @@
     border: none;
     cursor: pointer;
     color: #000;
+}
+
+.contenedor-cuentasT{
+    padding: 0.5rem 0 2rem 0;
+}
+.contendor-bton{
+    padding: 1.5rem 0 0 0;
+}
+
+#balanceG {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    color: #F0F3F4;
+    border-radius: 32px;
+    background-color: #2ECC71;
+    transition: all 0.3s ease-in;
+    font-size: 0.5rem;
+}
+
+#balanceG div {
+    position: absolute;
+    top: 1;
+    left: 0;
+    background-color: #07DC57;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17202A;
+    font-size: 1.1rem;
+}
+
+
+#balanceG:hover {
+    transform: scale(1.1);
+    width: 9.2rem;
+    padding-left: 1.5rem;
+    height: 2.35rem;
+    border-top: 2px solid rgba(0, 244, 92, 1);
+    border-right: 2px solid rgba(0, 244, 92, 1);
+    border-bottom: 2px solid rgba(0, 244, 92, 1);
+    background-color: #ECF0F1;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #17202A;
+}
+
+
+#add-row-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    color: #F0F3F4;
+    border-radius: 32px;
+    background-color: #2ECC71;
+    transition: all 0.3s ease-in;
+    font-size: 0.5rem;
+}
+
+#add-row-btn div {
+    position: absolute;
+    top: 1;
+    left: 0;
+    background-color: #07DC57;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17202A;
+    font-size: 1.1rem;
+}
+
+
+#add-row-btn:hover {
+    transform: scale(1.1);
+    width: 9.2rem;
+    padding-left: 1.5rem;
+    height: 2.35rem;
+    border-top: 2px solid rgba(0, 244, 92, 1);
+    border-right: 2px solid rgba(0, 244, 92, 1);
+    border-bottom: 2px solid rgba(0, 244, 92, 1);
+    background-color: #ECF0F1;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #17202A;
 }
