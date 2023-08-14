@@ -11,10 +11,6 @@
         
         <br>
 
-        <div class="boton">
-            <button id="agregar-card">Agregar CuentaT</button>
-        </div>
-
         <button id="agregar-card"><div><i class="fa-solid fa-plus"></i></div>Nueva cuenta</button>
 
 
@@ -121,5 +117,134 @@
         });
     </script>
 
+<title>Tabla de Movimientos</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .total-row {
+    font-weight: bold;
+  }
+  
+  .edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+  }
+</style>
 
+<div class="section">
+<h2>Balanza de comprobacion</h2>
+        <p>En este apartado indicamos los valores que se encuentran en las cuentasT</p>
+</div>
+
+<div>
+    <button id="add-row-btn">Agregar fila</button>
+    <table id="movimientos-table">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>MoviDebe</th>
+          <th>MoviHaber</th>
+          <th>SaldoDeudor</th>
+          <th>SaldoAcreedor</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td>Total:</td>
+          <td id="total-movidebe">0</td>
+          <td id="total-movihaber">0</td>
+          <td id="total-saldodeudor">0</td>
+          <td id="total-saldoacreedor">0</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script>
+        document.getElementById('add-row-btn').addEventListener('click', function() {
+          var table = document.getElementById('movimientos-table');
+          var newRow = table.insertRow(1);
+          newRow.innerHTML = `
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td>
+              <button class="delete-btn">Eliminar</button>
+            </td>
+          `;
+    
+          newRow.querySelector('.delete-btn').addEventListener('click', function() {
+            table.deleteRow(newRow.rowIndex);
+            updateTotal();
+          });
+    
+          updateTotal();
+        });
+    
+        function updateTotal() {
+          var table = document.getElementById('movimientos-table');
+          var totalMovidebe = 0;
+          var totalMovihaber = 0;
+          var totalSaldodeudor = 0;
+          var totalSaldoacreedor = 0;
+
+          var rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    
+          for (var i = 1; i < table.rows.length - 1; i++) {
+            var row = table.rows[i];
+            var movidebe = parseFloat(row.cells[1].textContent);
+            var movihaber = parseFloat(row.cells[2].textContent);
+            var saldodeudor = parseFloat(row.cells[3].textContent);
+            var saldoacreedor = parseFloat(row.cells[4].textContent);
+    
+            totalMovidebe += isNaN(movidebe) ? 0 : movidebe;
+            totalMovihaber += isNaN(movihaber) ? 0 : movihaber;
+            totalSaldodeudor += isNaN(saldodeudor) ? 0 : saldodeudor;
+            totalSaldoacreedor += isNaN(saldoacreedor) ? 0 : saldoacreedor;
+          }
+    
+          document.getElementById('total-movidebe').textContent = totalMovidebe.toFixed(2);
+          document.getElementById('total-movihaber').textContent = totalMovihaber.toFixed(2);
+          document.getElementById('total-saldodeudor').textContent = totalSaldodeudor.toFixed(2);
+          document.getElementById('total-saldoacreedor').textContent = totalSaldoacreedor.toFixed(2);
+        }
+      </script>
+</div>
 @endsection
